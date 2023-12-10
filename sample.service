@@ -1,0 +1,14 @@
+[Unit]
+Description=This service is required to run the web server
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=java -jar /opt/sample/service.jar
+User=Andrew_pc
+Restart=always
+RestartSec=10
+Environment=PORT=8888
+
+[Install]
+WantedBy=multi-user.target
